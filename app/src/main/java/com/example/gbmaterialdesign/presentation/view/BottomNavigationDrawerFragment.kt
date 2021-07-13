@@ -35,6 +35,11 @@ class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
                     this@BottomNavigationDrawerFragment.dismiss()
                     return@setNavigationItemSelectedListener true
                 }
+                R.id.action_settings -> {
+                    navController.navigate(R.id.nav_settings)
+                    this@BottomNavigationDrawerFragment.dismiss()
+                    return@setNavigationItemSelectedListener true
+                }
             }
             false
         }

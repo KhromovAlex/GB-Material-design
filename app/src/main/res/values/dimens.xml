@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bottomSheetLine_width">25dp</dimen>
+    <dimen name="bottomSheetLine_height">2dp</dimen>
+    <dimen name="bottomSheetLine_marginTop">5dp</dimen>
+    <dimen name="default_padding">16dp</dimen>
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="bottom_sheet_stroke_width">1dp</dimen>
+    <dimen name="bottom_sheet_corners_radius">20dp</dimen>
+    <dimen name="bottom_sheet_translationZ">10dp</dimen>
+    <dimen name="bottom_sheet_peekHeight">0dp</dimen>
+    <dimen name="text_size_subtitle">18sp</dimen>
+    <dimen name="text_size_title">22sp</dimen>
+    <dimen name="padding_bottom_on_screen">100dp</dimen>
+    <dimen name="size_0dp">0dp</dimen>
+    <dimen name="height_pod_image">300dp</dimen>
+</resources>
