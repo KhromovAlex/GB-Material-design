@@ -11,9 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
-        android:paddingHorizontal="16dp"
-        android:paddingTop="16dp"
-        android:paddingBottom="100dp">
+        android:paddingHorizontal="@dimen/default_padding"
+        android:paddingTop="@dimen/default_padding"
+        android:paddingBottom="@dimen/padding_bottom_on_screen">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -22,7 +22,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/search_wiki_input_layout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/size_0dp"
                 android:layout_height="wrap_content"
                 android:hint="@string/search_wiki"
                 app:counterEnabled="true"
@@ -45,12 +45,12 @@
             <ImageView
                 android:id="@+id/pod_image"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
-                android:layout_marginTop="8dp"
+                android:layout_height="@dimen/height_pod_image"
+                android:layout_marginTop="@dimen/small_margin"
+                android:src="@drawable/ic_baseline_cloud_off_24"
                 android:contentDescription="@string/photo_of_the_day_stub"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/search_wiki_input_layout"
-                app:srcCompat="@drawable/ic_baseline_cloud_off_24" />
+                app:layout_constraintTop_toBottomOf="@+id/search_wiki_input_layout" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -58,24 +58,14 @@
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottom_app_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        app:backgroundTint="?attr/colorPrimary"
-        app:fabAlignmentMode="end"
-        app:hideOnScroll="true"
-        app:layout_scrollFlags="scroll|enterAlways"
-        app:navigationIcon="@drawable/ic_baseline_menu_24" />
+        style="@style/bottomAppBar" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="?attr/colorAccent"
+        style="@style/fabStyle"
         android:contentDescription="@string/floating_action_button"
         app:layout_anchor="@id/bottom_app_bar"
-        app:srcCompat="@drawable/ic_baseline_text_snippet_24"
-        app:tint="#FFFFFF" />
+        app:srcCompat="@drawable/ic_baseline_text_snippet_24" />
 
     <LinearLayout
         android:id="@+id/error_state"
@@ -85,6 +75,7 @@
         android:orientation="vertical">
 
         <TextView
+            style="@style/textStyleError"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -100,13 +91,10 @@
 
     <ProgressBar
         android:id="@+id/loading_state"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center" />
+        style="@style/progressBarStyle" />
 
     <include
         android:id="@+id/bottom_sheet_container"
         layout="@layout/bottom_sheet_layout" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
-

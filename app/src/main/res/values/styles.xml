@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="bottomSheetLineStyle">
+        <item name="android:background">?attr/colorAccent</item>
+        <item name="android:layout_width">@dimen/bottomSheetLine_width</item>
+        <item name="android:layout_height">@dimen/bottomSheetLine_height</item>
+        <item name="android:layout_marginTop">@dimen/bottomSheetLine_marginTop</item>
+    </style>
+
+    <style name="bottomSheetContainer">
+        <item name="android:background">@drawable/bg_bottom_sheet</item>
+        <item name="android:translationZ">@dimen/bottom_sheet_translationZ</item>
+        <item name="behavior_hideable">true</item>
+        <item name="behavior_peekHeight">@dimen/bottom_sheet_peekHeight</item>
+    </style>
+
+    <style name="textStyleSubTitle">
+        <item name="android:textSize">@dimen/text_size_subtitle</item>
+        <item name="android:fontFamily">@font/zen_tokyo_zoo</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="textStyleTitle" parent="textStyleSubTitle">
+        <item name="android:textSize">@dimen/text_size_title</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="progressBarStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="textStyleError">
+        <item name="android:fontFamily">@font/zen_tokyo_zoo</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?attr/colorAccent</item>
+    </style>
+
+    <style name="fabStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:backgroundTint">?attr/colorAccent</item>
+        <item name="tint">?attr/colorSurface</item>
+    </style>
+
+    <style name="bottomAppBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="backgroundTint">?attr/colorPrimary</item>
+        <item name="fabAlignmentMode">end</item>
+        <item name="hideOnScroll">true</item>
+        <item name="layout_scrollFlags">scroll|enterAlways</item>
+        <item name="navigationIcon">@drawable/ic_baseline_menu_24</item>
+    </style>
+</resources>

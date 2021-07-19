@@ -10,9 +10,9 @@ import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
-import com.bumptech.glide.Glide
 import com.example.gbmaterialdesign.R
 import com.example.gbmaterialdesign.common.AppData
+import com.example.gbmaterialdesign.common.GlideApp
 import com.example.gbmaterialdesign.data.model.PODServerResponseData
 import com.example.gbmaterialdesign.databinding.FragmentPictureOfTheDayBinding
 import com.example.gbmaterialdesign.presentation.MainActivity
@@ -39,8 +39,8 @@ class PictureOfTheDayFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         if (savedInstanceState == null) {
-            viewModel.loadData()
             showLoading()
+            viewModel.loadData()
         }
         setBottomAppBar(view)
         setBottomSheetBehavior(view.findViewById(R.id.bottom_sheet_container))
@@ -68,10 +68,11 @@ class PictureOfTheDayFragment : Fragment() {
                 val url = serverResponseData.url
                 val description = serverResponseData.explanation
                 val title = serverResponseData.title
+                val mediaType = serverResponseData.mediaType
                 if (url.isNullOrEmpty()) {
                     showError()
                 } else {
-                    showSuccess(url, description ?: "", title ?: "")
+                    showSuccess(url, description ?: "", title ?: "", mediaType)
                 }
             }
             is AppData.Loading -> {
@@ -93,22 +94,21 @@ class PictureOfTheDayFragment : Fragment() {
         binding.errorState.visibility = View.VISIBLE
         binding.loadingState.visibility = View.GONE
         binding.successState.visibility = View.GONE
-
-        Glide.with(this)
-            .load(R.drawable.ic_baseline_cloud_off_24)
-            .centerCrop()
-            .into(binding.podImage)
     }
 
-    private fun showSuccess(url: String, description: String, title: String) {
+    private fun showSuccess(url: String, description: String, title: String, mediaType: String?) {
         binding.errorState.visibility = View.GONE
         binding.loadingState.visibility = View.GONE
         binding.successState.visibility = View.VISIBLE
 
-        Glide.with(this)
-            .load(url)
-            .centerCrop()
-            .into(binding.podImage)
+        if (mediaType == "image") {
+            GlideApp.with(requireContext())
+                .load(url)
+                .centerCrop()
+                .placeholder(R.drawable.ic_baseline_cloud_off_24)
+                .error(R.drawable.ic_baseline_cloud_off_24)
+                .into(binding.podImage)
+        }
 
         binding.bottomSheetContainer.bottomSheetDescription.text = description
         binding.bottomSheetContainer.bottomSheetDescriptionHeader.text = title

@@ -10,4 +10,10 @@
         android:label="@string/PictureOfTheDay"
         tools:layout="@layout/fragment_picture_of_the_day" />
 
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.gbmaterialdesign.presentation.view.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings" />
+
 </navigation>

@@ -8,4 +8,9 @@
     <string name="PictureOfTheDay">PictureOfTheDay</string>
     <string name="home">Home</string>
     <string name="load_again">Load again</string>
+    <string name="settings">Settings</string>
+    <string name="theme">Theme</string>
+    <string name="pink_theme">Pink</string>
+    <string name="green_theme">Green</string>
+    <string name="default_theme">Default</string>
 </resources>
