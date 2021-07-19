@@ -1,6 +1,7 @@
 package com.example.gbmaterialdesign.data.api
 
 import com.example.gbmaterialdesign.BuildConfig
+import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -10,7 +11,10 @@ class RetrofitClient {
     fun getClient(): RetrofitServices {
         val retrofit = Retrofit.Builder()
             .baseUrl(BuildConfig.BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(
+                GsonBuilder()
+                .setDateFormat("yyyy-MM-dd HH:mm:ss")
+                .create()))
             .client(createHttpClient())
             .build()
 

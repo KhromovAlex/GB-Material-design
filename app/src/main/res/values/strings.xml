@@ -13,4 +13,6 @@
     <string name="pink_theme">Pink</string>
     <string name="green_theme">Green</string>
     <string name="default_theme">Default</string>
+    <string name="earth_image">earth_image</string>
+    <string name="mars_image">mars_image</string>
 </resources>

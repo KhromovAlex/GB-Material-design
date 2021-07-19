@@ -11,7 +11,6 @@ import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import com.example.gbmaterialdesign.R
 import com.example.gbmaterialdesign.databinding.FragmentSettingsBinding
-import com.example.gbmaterialdesign.presentation.MainActivity
 
 class SettingsFragment : Fragment() {
     private var _binding: FragmentSettingsBinding? = null
@@ -27,8 +26,6 @@ class SettingsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        setBottomAppBar()
 
         val outValue = TypedValue()
         requireActivity().theme.resolveAttribute(R.attr.themeName, outValue, true)
@@ -83,17 +80,5 @@ class SettingsFragment : Fragment() {
             }
         }
         return super.onOptionsItemSelected(item)
-    }
-
-    private fun setBottomAppBar() {
-        val context = activity as MainActivity
-        context.setSupportActionBar(binding.bottomAppBar)
-        setHasOptionsMenu(true)
-    }
-
-    companion object {
-        @JvmStatic
-        fun newInstance() =
-            SettingsFragment()
     }
 }
