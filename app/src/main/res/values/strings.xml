@@ -16,4 +16,5 @@
     <string name="earth_image">earth_image</string>
     <string name="mars_image">mars_image</string>
     <string name="planets">Planets</string>
+    <string name="ic_android">ic_android</string>
 </resources>
