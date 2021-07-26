@@ -4,8 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.transition.ChangeBounds
+import androidx.transition.ChangeImageTransform
+import androidx.transition.TransitionManager
+import androidx.transition.TransitionSet
 import com.example.gbmaterialdesign.R
 import com.example.gbmaterialdesign.common.AppData
 import com.example.gbmaterialdesign.common.GlideApp
@@ -19,6 +24,8 @@ class MarsFragment : Fragment() {
     }
     private var _binding: FragmentMarsBinding? = null
     private val binding get() = _binding!!
+
+    private var isExpanded = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,6 +49,22 @@ class MarsFragment : Fragment() {
 
         binding.buttonReload.setOnClickListener {
             viewModel.loadData()
+        }
+
+        binding.marsImage.setOnClickListener {
+            isExpanded = !isExpanded
+            TransitionManager.beginDelayedTransition(
+                binding.scrollContainer, TransitionSet()
+                    .addTransition(ChangeBounds())
+                    .addTransition(ChangeImageTransform())
+            )
+
+            val params: ViewGroup.LayoutParams = binding.marsImage.layoutParams
+            params.height =
+                if (isExpanded) params.height * 2 else params.height / 2
+            binding.marsImage.layoutParams = params
+            binding.marsImage.scaleType =
+                if (isExpanded) ImageView.ScaleType.CENTER_CROP else ImageView.ScaleType.FIT_CENTER
         }
 
     }
