@@ -4,7 +4,6 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -15,7 +14,6 @@ import com.example.gbmaterialdesign.common.AppData
 import com.example.gbmaterialdesign.common.GlideApp
 import com.example.gbmaterialdesign.data.model.PODServerResponseData
 import com.example.gbmaterialdesign.databinding.FragmentPictureOfTheDayBinding
-import com.example.gbmaterialdesign.presentation.MainActivity
 import com.example.gbmaterialdesign.presentation.viewmodel.PictureOfTheDayViewModel
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 
@@ -42,8 +40,8 @@ class PictureOfTheDayFragment : Fragment() {
             showLoading()
             viewModel.loadData()
         }
-        setBottomAppBar(view)
-        setBottomSheetBehavior(view.findViewById(R.id.bottom_sheet_container))
+//        setBottomAppBar(view)
+//        setBottomSheetBehavior(view.findViewById(R.id.bottom_sheet_container))
 
         viewModel.getData().observe(viewLifecycleOwner) {
             renderData(it)
@@ -110,35 +108,23 @@ class PictureOfTheDayFragment : Fragment() {
                 .into(binding.podImage)
         }
 
-        binding.bottomSheetContainer.bottomSheetDescription.text = description
-        binding.bottomSheetContainer.bottomSheetDescriptionHeader.text = title
+        binding.podText.text = description
+        binding.podTitle.text = title
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            android.R.id.home -> {
-                BottomNavigationDrawerFragment().show(
-                    requireActivity().supportFragmentManager,
-                    "tag"
-                )
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
+//    private fun setBottomAppBar(view: View) {
+//        val context = activity as MainActivity
+//        context.setSupportActionBar(binding.bottomAppBar)
+//        setHasOptionsMenu(true)
+//        binding.fab.setOnClickListener {
+//            bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+//        }
+//    }
 
-    private fun setBottomAppBar(view: View) {
-        val context = activity as MainActivity
-        context.setSupportActionBar(binding.bottomAppBar)
-        setHasOptionsMenu(true)
-        binding.fab.setOnClickListener {
-            bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
-        }
-    }
-
-    private fun setBottomSheetBehavior(bottomSheet: ConstraintLayout) {
-        bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
-    }
+//    private fun setBottomSheetBehavior(bottomSheet: ConstraintLayout) {
+//        bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
+//        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+//    }
 
     companion object {
         @JvmStatic

@@ -11,6 +11,12 @@
         tools:layout="@layout/fragment_picture_of_the_day" />
 
     <fragment
+        android:id="@+id/nav_action_astronomical_objects"
+        android:name="com.example.gbmaterialdesign.presentation.view.AstronomicalObjectsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_astronomical_objects" />
+
+    <fragment
         android:id="@+id/nav_settings"
         android:name="com.example.gbmaterialdesign.presentation.view.SettingsFragment"
         android:label="@string/settings"
