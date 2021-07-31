@@ -17,4 +17,7 @@
     <string name="mars_image">mars_image</string>
     <string name="planets">Planets</string>
     <string name="ic_android">ic_android</string>
+    <string name="task_list">Task list</string>
+    <string name="new_task">New task</string>
+    <string name="trigger_move">trigger_move</string>
 </resources>

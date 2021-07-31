@@ -73,8 +73,8 @@ class MarsFragment : Fragment() {
         when (appData) {
             is AppData.Success<MarsServerResponseData> -> {
                 val serverResponseData = appData.data
-                val url = serverResponseData.photos?.first()?.imgSrc
-                val title = serverResponseData.photos?.first()?.camera?.fullName
+                val url = serverResponseData.photos?.firstOrNull()?.imgSrc
+                val title = serverResponseData.photos?.firstOrNull()?.camera?.fullName
 
                 if (url == null) {
                     showError()
