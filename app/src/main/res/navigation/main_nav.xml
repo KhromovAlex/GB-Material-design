@@ -17,6 +17,12 @@
         tools:layout="@layout/fragment_astronomical_objects" />
 
     <fragment
+        android:id="@+id/nav_task_list"
+        android:name="com.example.gbmaterialdesign.presentation.view.TaskListFragment"
+        android:label="@string/task_list"
+        tools:layout="@layout/fragment_task_list" />
+
+    <fragment
         android:id="@+id/nav_settings"
         android:name="com.example.gbmaterialdesign.presentation.view.SettingsFragment"
         android:label="@string/settings"

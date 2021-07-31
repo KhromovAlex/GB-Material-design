@@ -49,6 +49,10 @@ class MainActivity : AppCompatActivity() {
                     navController.navigate(R.id.nav_settings)
                     true
                 }
+                R.id.action_task_list -> {
+                    navController.navigate(R.id.nav_task_list)
+                    true
+                }
                 else -> false
             }
         }
