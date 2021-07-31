@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.transition.TransitionInflater
+import com.example.gbmaterialdesign.R
 import com.example.gbmaterialdesign.databinding.FragmentAstronomicalObjectsBinding
 import com.example.gbmaterialdesign.presentation.adapter.ViewPagerAdapter
 import com.example.gbmaterialdesign.presentation.adapter.ZoomOutPageTransformer
@@ -12,6 +14,13 @@ import com.example.gbmaterialdesign.presentation.adapter.ZoomOutPageTransformer
 class AstronomicalObjectsFragment : Fragment() {
     private var _binding: FragmentAstronomicalObjectsBinding? = null
     private val binding get() = _binding!!
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        val inflater = TransitionInflater.from(requireContext())
+        enterTransition = inflater.inflateTransition(R.transition.fade)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
