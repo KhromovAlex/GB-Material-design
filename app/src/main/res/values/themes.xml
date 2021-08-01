@@ -13,6 +13,7 @@
         <item name="android:textSize">14sp</item>
         <item name="themeName">@string/default_theme</item>
         <item name="colorSurface">@color/gray</item>
+        <item name="fontFamily">@font/lancelot</item>
     </style>
 
     <style name="Theme.Pink" parent="Theme.MaterialComponents.DayNight.NoActionBar">
@@ -28,6 +29,7 @@
         <item name="android:textSize">14sp</item>
         <item name="themeName">@string/pink_theme</item>
         <item name="colorSurface">@color/gray</item>
+        <item name="fontFamily">@font/lancelot</item>
     </style>
 
     <style name="Theme.Green" parent="Theme.MaterialComponents.DayNight.NoActionBar">
@@ -43,6 +45,7 @@
         <item name="android:textSize">14sp</item>
         <item name="themeName">@string/green_theme</item>
         <item name="colorSurface">@color/gray</item>
+        <item name="fontFamily">@font/lancelot</item>
     </style>
 
 </resources>

@@ -1,8 +1,12 @@
 package com.example.gbmaterialdesign.presentation.view
 
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -117,7 +121,12 @@ class PictureOfTheDayFragment : Fragment() {
         }
 
         binding.podText.text = description
-        binding.podTitle.text = title
+        val spannable = SpannableString(title)
+        spannable.setSpan(
+            ForegroundColorSpan(Color.RED),
+            0, if (spannable.isNotEmpty()) 1 else 0,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        binding.podTitle.text = spannable
     }
 
 //    private fun setBottomAppBar(view: View) {
