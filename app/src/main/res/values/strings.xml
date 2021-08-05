@@ -20,4 +20,5 @@
     <string name="task_list">Task list</string>
     <string name="new_task">New task</string>
     <string name="trigger_move">trigger_move</string>
+    <string name="img_splash_screen">img_splash_screen</string>
 </resources>
